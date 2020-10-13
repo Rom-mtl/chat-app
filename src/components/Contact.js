@@ -7,14 +7,14 @@ const offlineLogo = <span className="status-offline" />;
 const onlineLogo = <span className="status-online" />;
 
 
-function Contact() {
+function Contact(props) {
   return (
     <div className="Contact">
-      <img className="avatar" src="https://randomuser.me/api/portraits/women/84.jpg" alt="avatar" />
+      <img className="avatar" src={props.avatar} alt={props.name} />
       <div className="status">
-        <h1 className="name">Anita Sutton</h1>
-        <p className="status-text">{online ? "Online" : "Offline "}</p>
-        <span> {online ? onlineLogo : offlineLogo}</span>
+        <h1 className="name">{props.name}</h1>
+        <p className="status-text">{props.online ? "Online" : "Offline "}</p>
+        <span> {props.online ? onlineLogo : offlineLogo}</span>
       </div>
     </div>
 
